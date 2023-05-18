@@ -6,6 +6,9 @@ import textwrap
 
 # Function to align text to restrict to 80 words per line
 def align_text(text):
+    """
+    Aligns the given text to restrict to 80 words per line.
+    """
     wrapped_text = textwrap.wrap(text, width=80)
     aligned_text = '\n'.join(f'{line:{80}}' for line in wrapped_text)
     return aligned_text
@@ -82,7 +85,7 @@ try:
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
-        # Extract the verse text from the response
+        # Extract the verse text and other information from the response
         verse_data = response.json()
         verse = verse_data["text"]
         transliteration = verse_data["transliteration"]
