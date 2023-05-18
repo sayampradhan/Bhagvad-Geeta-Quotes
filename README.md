@@ -45,6 +45,6 @@ Make sure to keep your API key secure and avoid committing it to version control
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, please open an issue or submit a pull request.
 
-## [License](/License)
+## [License](/LICENSE)
 This project is licensed under the MIT License. 
 
