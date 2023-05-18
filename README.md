@@ -10,20 +10,17 @@ This Python script generates a random verse from the Bhagavad Gita using the Bha
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/your_username/your_repository.git```
+```git clone https://github.com/your_username/your_repository.git```
 
 2. Change to the project directory:
 ```cd your_repository```
 
 3. Install the required `requests` library:
-```pip install requests
-```
+```pip install requests```
 
 ## Usage
 Run the Python script using the following command:
-```python random_verse.py
-```
+```python random_verse.py```
 
 The script will generate a random chapter and verse number, make a request to the Bhagavad Gita API, and display the selected verse.
 
