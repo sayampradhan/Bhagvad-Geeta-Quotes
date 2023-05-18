@@ -2,6 +2,14 @@ import random
 
 import requests
 
+import textwrap
+
+# Function to align text to restrict to 80 words per line
+def align_text(text):
+    wrapped_text = textwrap.wrap(text, width=80)
+    aligned_text = '\n'.join(f'{line:{80}}' for line in wrapped_text)
+    return aligned_text
+
 # Generate random chapter and verse numbers
 chapter = random.randint(1, 18)
 verses = 0
@@ -77,9 +85,26 @@ try:
         # Extract the verse text from the response
         verse_data = response.json()
         verse = verse_data["text"]
+        transliteration = verse_data["transliteration"]
+        translation = align_text(verse_data["translations"][0]['description'])
         # Print the selected verse
         print(f"Bhagavad Gita Chapter {chapter}, Verse {verses}:")
-        print(verse)
+        print()
+
+        print(f"""VERSE
+---------------
+{verse}""")
+        print()
+
+        print(f"""TRANSLITERATION
+---------------
+{transliteration}""")
+        print()
+
+        print(f"""TRANSLATION
+-----------------
+{translation}""")
+
     else:
         # Display an error message if the request was unsuccessful
         print("Failed to fetch verse. Error:", response.status_code)
